@@ -11,7 +11,10 @@ import com.pizza.order.domain.OrderBean;
 import com.pizza.order.service.OrderService;
 
 @SpringBootApplication
-
+/**
+ * @author pdevaraj
+ * Main Class
+ */
 public class PizzaOrderApplication {
 	@Autowired
 	OrderService orderService;

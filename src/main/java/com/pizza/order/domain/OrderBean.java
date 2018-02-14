@@ -1,7 +1,10 @@
 package com.pizza.order.domain;
 
 import java.io.Serializable;
-
+/**
+ * @author pdevaraj
+ * OrderBean Class
+ */
 public class OrderBean implements Serializable, Comparable {
 
 	private static final long serialVersionUID = 1L;
