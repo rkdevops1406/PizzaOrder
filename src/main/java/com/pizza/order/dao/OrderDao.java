@@ -1,21 +1,21 @@
 package com.pizza.order.dao;
 
-
-
 import java.util.List;
 
 import com.pizza.order.domain.OrderBean;
+
 /**
- *  @author pdevaraj
+ * @author pdevaraj
  */
 public interface OrderDao {
 	/**
 	 * @return
 	 */
-	public List<OrderBean> readData();
+	List<OrderBean> readData(String inputFile) throws Exception;
+
 	/**
 	 * @param data
 	 * @return
 	 */
-	public boolean writeData(List<OrderBean> data);
+	boolean writeData(List<OrderBean> data, String outputFile) throws Exception;
 }

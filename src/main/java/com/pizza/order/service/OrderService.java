@@ -10,10 +10,10 @@ public interface OrderService {
 	/**
 	 * @return
 	 */
-	public List<OrderBean> readData();
+	List<OrderBean> readData(String inputFile) throws Exception;
 	/**
 	 * @param data
 	 * @return
 	 */
-	public boolean writeData(List<OrderBean> data);
+	boolean writeData(List<OrderBean> data,String outputFile) throws Exception;
 }

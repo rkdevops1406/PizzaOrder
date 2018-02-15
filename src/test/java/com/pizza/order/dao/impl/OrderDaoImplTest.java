@@ -9,8 +9,6 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 
 import com.pizza.order.dao.OrderDao;
 import com.pizza.order.domain.OrderBean;
@@ -20,23 +18,23 @@ public class OrderDaoImplTest {
 
 	@InjectMocks
 	private OrderDao orderDao = new OrderDaoImpl();
-	
+
 	@Before
-	public void initMocks(){
-	      MockitoAnnotations.initMocks(this);
-	}
-	
-	@Test
-	public void testReadData() {
-		 Assert.assertNotNull(orderDao.readData());
+	public void initMocks() {
+		MockitoAnnotations.initMocks(this);
 	}
 
 	@Test
-	public void testWriteData() {
-		 Assert.assertSame(true, orderDao.writeData(getData()));
+	public void testReadData() throws Exception {
+		Assert.assertNotNull(orderDao.readData(getInputFile()));
 	}
-	
-	private ArrayList<OrderBean> getData(){
+
+	@Test
+	public void testWriteData() throws Exception {
+		Assert.assertSame(true, orderDao.writeData(getData(), getOutputFile()));
+	}
+
+	private ArrayList<OrderBean> getData() {
 		ArrayList<OrderBean> orderList = new ArrayList<>();
 		OrderBean orderBean = new OrderBean();
 		orderBean.setOrderName("Test1");
@@ -44,5 +42,12 @@ public class OrderDaoImplTest {
 		orderList.add(orderBean);
 		return orderList;
 	}
-	
+
+	private String getInputFile() {
+		return "testIn.txt";
+	}
+
+	private String getOutputFile() {
+		return "testOut.txt";
+	}
 }

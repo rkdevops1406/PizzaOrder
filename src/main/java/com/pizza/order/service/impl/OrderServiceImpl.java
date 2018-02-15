@@ -8,25 +8,28 @@ import org.springframework.stereotype.Service;
 import com.pizza.order.dao.OrderDao;
 import com.pizza.order.domain.OrderBean;
 import com.pizza.order.service.OrderService;
-@Service
 /**
- * @author pdevaraj
+ * @author pdevaraj 
  * OrderServiceImpl class
  */
+@Service
 public class OrderServiceImpl implements OrderService {
 	@Autowired
 	OrderDao orderDao;
 	/**
-	 * Read the data from the file
+	 * readData method
 	 */
-	public List<OrderBean> readData(){
-		List<OrderBean> orderList = orderDao.readData();
+	@Override
+	public List<OrderBean> readData(String inputFile) throws Exception {
+		List<OrderBean> orderList = orderDao.readData(inputFile);
 		return orderList;
 	}
 	/**
-	 * Write the content to the file
+	 * writeData method
 	 */
-	public boolean writeData(List<OrderBean> data){
-		return orderDao.writeData(data);
+	@Override
+	public boolean writeData(List<OrderBean> data, String outputFile)
+			throws Exception {
+		return orderDao.writeData(data, outputFile);
 	}
 }

@@ -6,14 +6,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 import org.mockito.runners.MockitoJUnitRunner;
+
 @RunWith(MockitoJUnitRunner.class)
 public class OrderBeanTest {
 
 	@Before
-	public void initMocks(){
-	      MockitoAnnotations.initMocks(this);
+	public void initMocks() {
+		MockitoAnnotations.initMocks(this);
 	}
-	
+
 	@Test
 	public void testGetOrderName() {
 		OrderBean orderBean = getOrderBean();
@@ -46,7 +47,8 @@ public class OrderBeanTest {
 		orderBean.setOrderTime(Long.valueOf(1234));
 		Assert.assertSame(0, orderBean.compareTo(orderBean));
 	}
-	private OrderBean getOrderBean(){
+
+	private OrderBean getOrderBean() {
 		OrderBean orderBean = new OrderBean();
 		orderBean.setOrderName("test");
 		orderBean.setOrderTime(Long.valueOf(12345));
