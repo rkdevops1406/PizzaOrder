@@ -6,5 +6,6 @@
         Example: c:\PizzaOrder> mvn clean compile package <enter>
 #### Step 5: Run the application using below command.
         Example: c:\PizzaOrder>java -jar target\PizzaOrder-0.0.1-SNAPSHOT.jar com.pizza.order.PizzaOrderApplication <Source File> <Destination File> <enter>
+        Note : Sample input file "testIn.txt" available in the root folder.
 #### Step 6: Check the output file in the destination folder.
 
