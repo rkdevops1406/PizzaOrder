@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.pizza.order.constants.OrderConstants;
+import com.pizza.order.controller.OrderController;
 import com.pizza.order.domain.OrderBean;
 import com.pizza.order.service.OrderService;
 
@@ -25,17 +26,16 @@ public class PizzaOrderApplication {
 
 	/**
 	 * Main method
-	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		try {
 			ApplicationContext ctx = SpringApplication.run(
 					PizzaOrderApplication.class, args);
-			OrderService orderService = ctx.getBean(OrderService.class);
+			OrderController orderController = ctx.getBean(OrderController.class);
 			if (args.length == 3) {
-				List<OrderBean> data = orderService.readData(args[1]);
-				boolean flag = orderService.writeData(data, args[2]);
+				List<OrderBean> data = orderController.readData(args[1]);
+				boolean flag = orderController.writeData(data, args[2]);
 				if (flag) {
 					LOGGER.debug(OrderConstants.FILE_GENERATED);
 				}
