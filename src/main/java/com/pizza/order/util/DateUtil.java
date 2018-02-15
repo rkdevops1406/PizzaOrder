@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
+import com.pizza.order.constants.OrderConstants;
+
 /**
  * @author pdevaraj
  */
@@ -13,8 +15,8 @@ public class DateUtil {
 	 * @return
 	 */
 	public static String convertEpochToUTC(Long epochDate) {
-		final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+		final SimpleDateFormat sdf = new SimpleDateFormat(OrderConstants.DATE_FORMAT);
+		sdf.setTimeZone(TimeZone.getTimeZone(OrderConstants.UTC));
 		String formattedDate = null;
 		if (epochDate != null) {
 			Date date = new Date(epochDate);

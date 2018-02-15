@@ -6,6 +6,8 @@ package com.pizza.order.constants;
  */
 public class OrderConstants {
 	private OrderConstants(){}
+	public static final String DATE_FORMAT="dd/MM/yyyy HH:mm:ss";
+	public static final String UTC ="UTC";
 	public static final String ORDER_NO = "Order#";
 	public static final String ORDER_NAME ="Order Name";
 	public static final String ORDER_TIME ="Order Time";
