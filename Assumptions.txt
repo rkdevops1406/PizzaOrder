@@ -1,0 +1,9 @@
+Assumptions
+***********
+1. Input or source file is a text file
+2. Only two column in the file
+3. It is a Tab delimited columns
+4. Time column should be Epoch date format
+5. User need to provide the source file and destination file 
+   while run the program.
+

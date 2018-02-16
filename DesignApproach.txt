@@ -1,0 +1,10 @@
+Design Approach
+****************
+Developed using Spring Boot for the following design decision.
+1. Configuration less or minimal upfront configuration.
+2. Easy dependency management for pulling all required libraries.
+3. Auto Configuration for pulling all the required libraries and dependencies.
+4. Data access object implemented for future migration.
+5. Embedded Tomcat or Jetty server aand Servlet Container Support.
+6. Fast development time with production grade application.
+7. Production-ready features such as tracing, metrics and health status.
